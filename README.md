@@ -10,7 +10,7 @@ This year's edition of the course contains a new part on TypeScript. Content for
 
 ### Credits
 
-The course is worth **3-9 credits**, and the content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020. There is also an associated project that is worth 1-10 credits. For **three credits**, you must submit all compulsory exercises (without asterisks) **for parts 0-3**. For **5-7 credits** the number of credits and the grade are based on the total number of **submitted exercises for parts 0-7** (including exercises marked with an asterisk). **8-9 credits** can be achieved by submitting the exercises for **part 8 and 9**. Exercises in parts 8 and 9 do not count towards the grade for the 5-7 credit course.
+The course is worth **3-9 credits**, and the content is the same as in the Full stack course held at the Department of Computer Science at the University of Helsinki in Spring 2020. There is also an associated project that is worth 1-10 credits. For **3 credits**, you must submit all compulsory exercises (without asterisks) **for parts 0-3**. For **5-7 credits** the number of credits and the grade are based on the total number of **submitted exercises for parts 0-7** (including exercises marked with an asterisk). **8-9 credits** can be achieved by submitting the exercises for **part 8 and 9**. Exercises in parts 8 and 9 do not count towards the grade for the 5-7 credit course.
 
 
 

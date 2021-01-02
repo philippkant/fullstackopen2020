@@ -1,33 +1,35 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Button = ({ handleClick, text }) => (
-  <button onClick={handleClick}>
-    {text}
-  </button>
-)
+const Button = ({ handleClick, text }) =>
+  <button onClick={handleClick}>{text}</button>
 
-const Statistic = ({ text, value }) => <div>{text} {value}</div>
+const Statistic = ({ text, value }) =>
+  <tr><td>{text}</td><td>{value}</td></tr>
 
 const Statistics = ({ good, neutral, bad }) => {
 
-  const all = good+neutral+bad
-  const average = (good*1+neutral*0+bad*-1)/all
+  const all = good + neutral + bad
+  const average = (good*1 + neutral*0 + bad*-1)/all
   const positive = good / all
 
-  if (all == 0) {
+  if (all === 0) {
     return (<p>No feedback given</p>)
   }
 
   return (
     <div>
       <h1>statistics</h1>
-      <Statistic text="good" value={good} />
-      <Statistic text="neutral" value={neutral} />
-      <Statistic text="bad" value={bad} />
-      <Statistic text="all" value={all} />
-      <Statistic text="average" value={average} />
-      <Statistic text="positive" value={positive*100} />
+      <table>
+        <tbody>
+          <Statistic text="good" value={good} />
+          <Statistic text="neutral" value={neutral} />
+          <Statistic text="bad" value={bad} />
+          <Statistic text="all" value={all} />
+          <Statistic text="average" value={average} />
+          <Statistic text="positive" value={positive*100 + " %"} />
+        </tbody>
+      </table>
     </div>
   )
 }

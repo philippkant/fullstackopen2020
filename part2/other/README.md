@@ -1,5 +1,7 @@
 ### Working with json-server and axios
 
+0. npx create-react-app phonebook
+
 1. create db.json file in root of project
 2. "npm install axios" in root of project
 3. "npm install json-server --save-dev" in root of project

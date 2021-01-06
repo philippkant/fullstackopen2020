@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import personService from '../services/persons'
 
 const PersonForm = ({persons, setPersons, newName, setNewName, newNumber, setNewNumber}) => {
   const addName = (event) => {
@@ -9,18 +9,18 @@ const PersonForm = ({persons, setPersons, newName, setNewName, newNumber, setNew
       number: newNumber
     }
 
-    axios
-    .post('http://localhost:3001/persons', newPerson)
-    .then(response => {
-      if (persons.some(person => person.name === newName)) {
-        window.alert(`${newName} is already added to phonebook`)
-      }
-      else {
-        setPersons(persons.concat(response.data))
-        setNewName('')
-        setNewNumber('')
-      }
-    })
+    if (persons.some(person => person.name === newName)) {
+      window.alert(`${newName} is already added to phonebook`)
+    }
+    else {
+      personService
+        .create(newPerson)
+        .then(returnedPerson => {
+          setPersons(persons.concat(returnedPerson))
+          setNewName('')
+          setNewNumber('')
+        })
+    }
   }
 
   const handleNameChange = (event) => {

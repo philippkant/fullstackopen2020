@@ -3,12 +3,14 @@ import personService from '../services/persons'
 
 const Person = ({person, setPersons, persons}) => {
   const deleteButton = () => {
-    personService
-      .deletePerson(person.id)
-      .then(() => {
-        const newPersons = persons.filter(pers => pers.id !== person.id)
-        setPersons(newPersons)
-      })
+    if (window.confirm(`Delete ${person.name}?`)) {
+      personService
+        .deletePerson(person.id)
+        .then(() => {
+          const newPersons = persons.filter(pers => pers.id !== person.id)
+          setPersons(newPersons)
+        })
+    }
   }
   return (
     <div>{person.name} {person.number} <button onClick={deleteButton}>delete</button></div>

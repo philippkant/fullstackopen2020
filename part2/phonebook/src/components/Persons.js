@@ -9,10 +9,17 @@ const Person = ({person, setPersons, persons, setNotificationMessage}) => {
         .then(() => {
           const newPersons = persons.filter(pers => pers.id !== person.id)
           setPersons(newPersons)
-          setNotificationMessage(`Deleted ${person.name}`)
+          setNotificationMessage({message:`Deleted ${person.name}`, type:'notification'})
           setTimeout(() => {
-            setNotificationMessage(null)
+            setNotificationMessage({message: null, type: null})
           }, 5000)
+        })
+        .catch(() => {
+          setNotificationMessage({message:`Information of ${person.name} has already been removed from server`, type:'error'})
+          setTimeout(() => {
+            setNotificationMessage({message: null, type: null})
+          }, 5000)
+          setPersons(persons.filter(pers => pers.id !== person.id))
         })
     }
   }

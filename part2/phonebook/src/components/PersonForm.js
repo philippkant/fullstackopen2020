@@ -18,10 +18,19 @@ const PersonForm = ({persons, setPersons, newName, setNewName, newNumber, setNew
           setPersons(persons.map(pers => pers.id !== existingPerson.id ? pers : returnedPerson))
           setNewName('')
           setNewNumber('')
-          setNotificationMessage(`Changed ${newName}'s number to ${newNumber}`)
+          setNotificationMessage({message:`Changed ${newName}'s number to ${newNumber}`, type:'notificaiton'})
           setTimeout(() => {
-            setNotificationMessage(null)
+            setNotificationMessage({message: null, type: null})
           }, 5000)
+        })
+        .catch(() => {
+          setNotificationMessage({message:`Information of ${newName} has already been removed from server`, type:'error'})
+          setTimeout(() => {
+            setNotificationMessage({message: null, type: null})
+          }, 5000)
+          setPersons(persons.filter(person => person.id !== existingPerson.id))
+          setNewName('')
+          setNewNumber('')
         })
       }
     }
@@ -32,9 +41,9 @@ const PersonForm = ({persons, setPersons, newName, setNewName, newNumber, setNew
           setPersons(persons.concat(returnedPerson))
           setNewName('')
           setNewNumber('')
-          setNotificationMessage(`Added ${newName}`)
+          setNotificationMessage({message:`Added ${newName}`, type:'notification'})
           setTimeout(() => {
-            setNotificationMessage(null)
+            setNotificationMessage({message: null, type: null})
           }, 5000)
         })
     }

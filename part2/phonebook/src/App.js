@@ -11,7 +11,7 @@ const App = () => {
   const [ newName, setNewName ] = useState('')
   const [ newNumber, setNewNumber ] = useState('')
   const [ newFilter, setNewFilter ] = useState('')
-  const [ notificationMessage, setNotificationMessage ] = useState(null)
+  const [ notificationMessage, setNotificationMessage ] = useState({message: null, type: null})
 
 
   const hook = () => {
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
-      <Notification message={notificationMessage}/>
+      <Notification notificationMessage={notificationMessage}/>
       <Filter newFilter={newFilter} setNewFilter={setNewFilter} />
       <h3>add a new</h3>
       <PersonForm

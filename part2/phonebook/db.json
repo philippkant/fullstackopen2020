@@ -1,14 +1,19 @@
 {
   "persons": [
     {
-      "name": "Fass Mann",
-      "number": "123",
-      "id": 15
+      "name": "Thomas Müller",
+      "number": "7457-6873",
+      "id": 8
     },
     {
-      "name": "Philipp",
-      "number": "222",
-      "id": 16
+      "name": "Stefan Wirtz",
+      "number": "4362-23",
+      "id": 9
+    },
+    {
+      "name": "Wilhelm Friedrich",
+      "number": "42356-1233",
+      "id": 10
     }
   ]
 }

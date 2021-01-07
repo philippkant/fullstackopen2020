@@ -1,7 +1,7 @@
 import React from 'react'
 import personService from '../services/persons'
 
-const Person = ({person, setPersons, persons}) => {
+const Person = ({person, setPersons, persons, setNotificationMessage}) => {
   const deleteButton = () => {
     if (window.confirm(`Delete ${person.name}?`)) {
       personService
@@ -9,6 +9,10 @@ const Person = ({person, setPersons, persons}) => {
         .then(() => {
           const newPersons = persons.filter(pers => pers.id !== person.id)
           setPersons(newPersons)
+          setNotificationMessage(`Deleted ${person.name}`)
+          setTimeout(() => {
+            setNotificationMessage(null)
+          }, 5000)
         })
     }
   }
@@ -17,11 +21,17 @@ const Person = ({person, setPersons, persons}) => {
   )
 }
 
-const Persons = ({persons, newFilter, setPersons}) => {
+const Persons = ({persons, newFilter, setPersons, setNotificationMessage }) => {
   const filteredPersons = persons.map(
     person => {
     if (person.name.toLowerCase().includes(newFilter.toLowerCase())) {
-      return (<Person key={person.name} person={person} setPersons={setPersons} persons={persons}/>)
+      return (<Person
+                key={person.name}
+                person={person}
+                setPersons={setPersons}
+                persons={persons}
+                setNotificationMessage={setNotificationMessage}
+              />)
     }
     return null
     }

@@ -1,34 +1,19 @@
 {
   "persons": [
     {
-      "name": "Arto Hellas",
-      "number": "040-123456",
-      "id": 1
-    },
-    {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
-      "id": 2
-    },
-    {
-      "name": "Dan Abramov",
-      "number": "12-43-234345",
-      "id": 3
-    },
-    {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
-      "id": 4
-    },
-    {
       "name": "Thomas Müller",
-      "number": "345-34512",
-      "id": 5
+      "number": "2345-254-25",
+      "id": 9
     },
     {
-      "name": "asd",
-      "number": "234",
-      "id": 6
+      "name": "Hans Glück",
+      "number": "423215-986-2-3",
+      "id": 10
+    },
+    {
+      "name": "Zinedine Zidane",
+      "number": "3333-11",
+      "id": 11
     }
   ]
 }

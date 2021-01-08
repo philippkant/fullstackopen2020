@@ -27,3 +27,7 @@ The course is worth **3-9 credits**, and the content is the same as in the Full 
 * <a href="https://fullstackopen.com/en/part8">Part 8</a> `GraphQL`
 * <a href="https://fullstackopen.com/en/part9">Part 9</a> `Typescript`
 * <a href="https://fullstackopen.com/en/part10">Part 10</a> `React Native`
+
+Part 0 Fundamentals of Web Apps
+Part 1 and 2 are React -> browser side code
+Part 3 server side code
